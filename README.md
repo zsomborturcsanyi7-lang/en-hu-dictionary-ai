@@ -1,95 +1,115 @@
-# AI Dictionary Collector
+# AI Dictionary Collector — Automatikus Angol-Magyar Szótár és Tanítóadat Generátor
 
-Egy teljes angol-magyar szótárgyűjtő és tanító adatgeneráló rendszer AI modellek számára.
+**Automatizált eszköz angol-magyar szótár építésére és AI tanítóadat előállítására. Képes tömegesen fordítani szavakat, szinonimákat és példamondatokat gyűjteni.**
 
-## Főbb funkciók
+## 📚 Leírás
 
-1. **Automatikus szótárletöltés** - Több forrásból (GitHub repositories)
-2. **Automatikus fordítás** - Google Translate API használatával
-3. **Példamondat generálás** - Mindkét nyelven értelmes mondatok
-4. **Több kimeneti formátum** - JSON, JSONL, CSV, TXT
-5. **Metaadatok** - Szófaj, nehézségi szint, címkék
+Az AI Dictionary Collector egy olyan eszköz, amely:
 
-## Telepítés
+- **Angol → Magyar szavak** automatikus fordítása
+- **Szinonimák gyűjtése** mindkét nyelven
+- **Példamondatok** generálása minden szóhoz
+- **Strukturált JSON kimenet** AI tanításhoz
+- **Batch feldolgozás** — több ezer szó egyszerre
+- **Konfigurálható** — testreszabható forrás- és célnyelv, kimeneti formátum
+
+## 📁 Fájlszerkezet
+
+```
+ai_dictionary_collector/
+├── config.py                    # Konfiguráció (API kulcsok, beállítások)
+├── quick_test.py                # Gyorsteszt 50 szóval
+├── run.bat                      # Windows indító
+├── requirements.txt             # Python függőségek
+├── data/                        # Generált adatok könyvtára
+└── README.md
+```
+
+## 🚀 Használat
+
+### Függőségek telepítése
 
 ```bash
-cd ai_dictionary_collector
 pip install -r requirements.txt
 ```
 
-## Használat
+### Gyorsteszt futtatása
 
-### Teljes futtatás (ajánlott)
-```bash
-python main.py
-```
-
-### Gyors teszt (50 szó)
 ```bash
 python quick_test.py
 ```
 
-### Konfigurálás
-Szerkeszd a `config.py` fájlt:
-- `MAX_WORDS`: Feldolgozandó szavak maximális száma
-- `TRANSLATION_DELAY`: API rate limiting
-- `MAX_WORKERS`: Párhuzamos fordítók száma
+Ez 50 angol szóval teszteli a rendszert:
+- Fordítás angol → magyar
+- Szinonimák keresése
+- Példamondatok generálása
+- Eredmények mentése JSON formátumban
 
-## Kimeneti formátumok
+### Batch indítás
 
-A `data/` mappában:
-- `translations.json`: Teljes angol-magyar szótár
-- `training_data.json`: Teljes tanító adatkészlet
-- `training_data.jsonl`: JSON Lines formátum (AI training)
-- `training_data.csv`: CSV formátum
-- `word_pairs.txt`: Egyszerű szópárok
+```bash
+run.bat
+```
 
-## Példa adat struktúra
+### Konfiguráció
+
+A `config.py` fájlban állítható be:
+
+```python
+# API beállítások
+API_KEY = "your-api-key"
+TARGET_LANGUAGE = "hu"
+
+# Gyűjtési beállítások
+MAX_WORDS = 5000
+INCLUDE_SYNONYMS = True
+INCLUDE_EXAMPLES = True
+
+# Kimenet
+OUTPUT_DIR = "data/"
+OUTPUT_FORMAT = "json"
+```
+
+## 📦 Függőségek
+
+```bash
+pip install requests python-dotenv
+```
+
+- **Python 3.8+**
+- **requests** — API hívásokhoz
+- **python-dotenv** — környezeti változók kezelése
+
+## 📊 Kimenet formátum
 
 ```json
 {
-  "id": 1,
-  "english_word": "algorithm",
-  "hungarian_translation": "algoritmus",
-  "english_example": "The word 'algorithm' means algoritmus in Hungarian.",
-  "hungarian_example": "Az 'algorithm' szó magyarul algoritmust jelent.",
-  "word_type": "noun",
-  "difficulty": "intermediate",
-  "tags": ["medium", "uncommon", "noun"]
+  "word": "computer",
+  "translation": "számítógép",
+  "synonyms": {
+    "english": ["PC", "machine", "processor"],
+    "hungarian": ["PC", "gép", "processzor"]
+  },
+  "examples": [
+    {"english": "I use my computer every day.", "hungarian": "Minden nap használom a számítógépemet."},
+    {"english": "The computer is running slowly.", "hungarian": "A számítógép lassan fut."}
+  ],
+  "part_of_speech": "noun",
+  "difficulty": "A1"
 }
 ```
 
-## AI tanításhoz való felhasználás
+## 🎯 Felhasználási terület
 
-### JSONL formátum (legjobb AI-hoz)
-```json
-{"english_word": "hello", "hungarian_translation": "szia", ...}
-{"english_word": "world", "hungarian_translation": "világ", ...}
-```
+- **AI tanító adathalmaz** — nyelvi modellek finomhangolása
+- **Szótár építés** — online/offline szótárak alapanyaga
+- **Nyelvtanulás** — tanulókártyák és gyakorló feladatok generálása
+- **Fordítási memória** — gépi fordító rendszerek bővítése
 
-### CSV formátum
-```csv
-id,english_word,hungarian_translation,english_example,hungarian_example,word_type,difficulty
-1,hello,szia,"The word 'hello' means szia in Hungarian.","A(z) 'hello' szó magyarul sziát jelent.",noun,beginner
-```
+## 🔧 Testreszabás
 
-## Teljesítmény
+A `config.py` módosításával:
 
-- **Kis méret**: 1,000 szó ~ 5-10 perc
-- **Közepes**: 10,000 szó ~ 1-2 óra  
-- **Nagy**: 50,000+ szó ~ 6-12 óra (API rate limiting miatt)
-
-## Figyelmeztetések
-
-1. **API Rate Limiting**: A Google Translate ingyenes változata korlátozott
-2. **Internet kapcsolat**: Szükséges a letöltéshez és fordításhoz
-3. **Fordítás pontossága**: Automatikus fordítás, lehetnek hibák
-
-## Fejlesztési lehetőségek
-
-- [ ] További fordító API-k (DeepL, Microsoft)
-- [ ] Offline fordító modellek
-- [ ] Hanganyag generálás
-- [ ] Képasszociációk
-- [ ] Gyakorisági adatok
-- [ ] Témakörök szerinti csoportosítás
+- Más nyelvpárra állítható (pl. angol-német, angol-francia)
+- Kimeneti formátum váltható (JSON, CSV, SQLite)
+- Szűrési feltételek állíthatók (szófaj, nehézségi szint)
