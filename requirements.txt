@@ -1,0 +1,5 @@
+requests>=2.31.0
+deep-translator>=1.11.0
+pandas>=2.0.0  # CSV kezeléshez
+tqdm>=4.65.0   # Progress bar
+python-dotenv>=1.0.0  # Környezeti változók
