@@ -1,86 +1,86 @@
-# AI Dictionary Collector — Automatikus Angol-Magyar Szótár és Tanítóadat Generátor
+# AI Dictionary Collector — Automated English-Hungarian Dictionary and Training Data Generator
 
-**Automatizált eszköz angol-magyar szótár építésére és AI tanítóadat előállítására. Képes tömegesen fordítani szavakat, szinonimákat és példamondatokat gyűjteni.**
+**An automated tool for building English-Hungarian dictionaries and generating AI training data. Capable of bulk-translating words, collecting synonyms, and generating example sentences.**
 
-## 📚 Leírás
+## 📚 Description
 
-Az AI Dictionary Collector egy olyan eszköz, amely:
+AI Dictionary Collector is a tool that:
 
-- **Angol → Magyar szavak** automatikus fordítása
-- **Szinonimák gyűjtése** mindkét nyelven
-- **Példamondatok** generálása minden szóhoz
-- **Strukturált JSON kimenet** AI tanításhoz
-- **Batch feldolgozás** — több ezer szó egyszerre
-- **Konfigurálható** — testreszabható forrás- és célnyelv, kimeneti formátum
+- Provides **English → Hungarian** automatic word translation
+- **Collects synonyms** in both languages
+- **Generates example sentences** for every word
+- Produces **structured JSON output** for AI training
+- Supports **batch processing** — thousands of words at once
+- Is **configurable** — customizable source/target language, output format
 
-## 📁 Fájlszerkezet
+## 📁 File Structure
 
 ```
 ai_dictionary_collector/
-├── config.py                    # Konfiguráció (API kulcsok, beállítások)
-├── quick_test.py                # Gyorsteszt 50 szóval
-├── run.bat                      # Windows indító
-├── requirements.txt             # Python függőségek
-├── data/                        # Generált adatok könyvtára
+├── config.py                    # Configuration (API keys, settings)
+├── quick_test.py                # Quick test with 50 words
+├── run.bat                      # Windows launcher
+├── requirements.txt             # Python dependencies
+├── data/                        # Generated data directory
 └── README.md
 ```
 
-## 🚀 Használat
+## 🚀 Usage
 
-### Függőségek telepítése
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Gyorsteszt futtatása
+### Run quick test
 
 ```bash
 python quick_test.py
 ```
 
-Ez 50 angol szóval teszteli a rendszert:
-- Fordítás angol → magyar
-- Szinonimák keresése
-- Példamondatok generálása
-- Eredmények mentése JSON formátumban
+This tests the system with 50 English words:
+- English → Hungarian translation
+- Synonym lookup
+- Example sentence generation
+- Results saved in JSON format
 
-### Batch indítás
+### Batch launch
 
 ```bash
 run.bat
 ```
 
-### Konfiguráció
+### Configuration
 
-A `config.py` fájlban állítható be:
+The following can be set in `config.py`:
 
 ```python
-# API beállítások
+# API settings
 API_KEY = "your-api-key"
 TARGET_LANGUAGE = "hu"
 
-# Gyűjtési beállítások
+# Collection settings
 MAX_WORDS = 5000
 INCLUDE_SYNONYMS = True
 INCLUDE_EXAMPLES = True
 
-# Kimenet
+# Output
 OUTPUT_DIR = "data/"
 OUTPUT_FORMAT = "json"
 ```
 
-## 📦 Függőségek
+## 📦 Dependencies
 
 ```bash
 pip install requests python-dotenv
 ```
 
 - **Python 3.8+**
-- **requests** — API hívásokhoz
-- **python-dotenv** — környezeti változók kezelése
+- **requests** — for API calls
+- **python-dotenv** — environment variable management
 
-## 📊 Kimenet formátum
+## 📊 Output Format
 
 ```json
 {
@@ -99,17 +99,20 @@ pip install requests python-dotenv
 }
 ```
 
-## 🎯 Felhasználási terület
+## 🎯 Use Cases
 
-- **AI tanító adathalmaz** — nyelvi modellek finomhangolása
-- **Szótár építés** — online/offline szótárak alapanyaga
-- **Nyelvtanulás** — tanulókártyák és gyakorló feladatok generálása
-- **Fordítási memória** — gépi fordító rendszerek bővítése
+- **AI training datasets** — fine-tuning language models
+- **Dictionary building** — source material for online/offline dictionaries
+- **Language learning** — generating flashcards and practice exercises
+- **Translation memory** — expanding machine translation systems
 
-## 🔧 Testreszabás
+## 🔧 Customization
 
-A `config.py` módosításával:
+By modifying `config.py`:
 
-- Más nyelvpárra állítható (pl. angol-német, angol-francia)
-- Kimeneti formátum váltható (JSON, CSV, SQLite)
-- Szűrési feltételek állíthatók (szófaj, nehézségi szint)
+- Switch to a different language pair (e.g., English-German, English-French)
+- Change output format (JSON, CSV, SQLite)
+- Apply filtering criteria (part of speech, difficulty level)
+
+## Author
+Zsombi & Hermes Agent (Nous Research)
