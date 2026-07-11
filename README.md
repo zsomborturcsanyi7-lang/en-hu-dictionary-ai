@@ -1,5 +1,8 @@
 # AI Dictionary Collector — Automated English-Hungarian Dictionary and Training Data Generator
 
+**Status:** ⚠️ Prototype — translation pipeline works, needs API keys for Google Translate
+
+
 **An automated tool for building English-Hungarian dictionaries and generating AI training data. Capable of bulk-translating words, collecting synonyms, and generating example sentences.**
 
 ## 📚 Description
