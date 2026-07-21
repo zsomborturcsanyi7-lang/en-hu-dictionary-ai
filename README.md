@@ -1,29 +1,27 @@
-# AI Dictionary Collector — Automatikus angol-magyar szótár és training adat generátor
+# AI Dictionary Collector — Automated English-Hungarian Dictionary & Training Data Generator
 
-**Status:** ⚠️ Prototype — translation pipeline működik, Google Translate API kulcs kell
+**Status:** ⚠️ Prototype — translation pipeline works, needs Google Translate API key
 
-Automatikus eszköz angol-magyar szótárak építésére és AI training adatok generálására. Tömeges fordítás, szinonimagyűjtés, példamondat generálás.
+Automated tool for building English-Hungarian dictionaries and generating AI training data. Bulk translation, synonym collection, example sentence generation.
 
 ## ⚠️ THIS PROJECT IS UNFINISHED — FEEL FREE TO CONTINUE IT ⚠️
 
-**Ez a projekt NINCS KÉSZEN. Bárki folytathatja, aki akarja!**
-Ezt a projektet Zsombi & Hermes Agent (Nous Research) közösen fejlesztette, de egyik projekt sincs 100%-osan befejezve.
+This project was developed by Zsombi & Hermes Agent (Nous Research).
 
 ---
 
 ## Features
-- Angol → Magyar automatikus szófordítás
-- Szinonimagyűjtés mindkét nyelven
-- Példamondat generálás minden szóhoz
-- Strukturált JSON output AI traininghez
-- Batch feldolgozás (több ezer szó egyszerre)
+- English → Hungarian automatic word translation
+- Synonym collection in both languages
+- Example sentence generation for every word
+- Structured JSON output for AI training
+- Batch processing (thousands of words at once)
 
-## Fájlok
-| Fájl | Leírás |
-|------|--------|
-| `config.py` | Konfiguráció |
-| `quick_test.py` | Gyors teszt |
-| `run.bat` | Windows futtató |
+## Files
+| File | Description |
+|------|-------------|
+| `config.py` | Configuration |
+| `quick_test.py` | Quick test |
 
-## Fejlesztő
+## Developer
 Zsombi & Hermes Agent (Nous Research)
