@@ -1,19 +1,43 @@
 # en-hu-dictionary-ai
 
-Automated English-Hungarian dictionary and dataset generator for AI models.
+Automated English-Hungarian dictionary dataset generator for machine translation.
 
-## 📌 Overview & Purpose
-Processes, cleans, and builds parallel English-Hungarian translation datasets and dictionary entries.
+## Overview & Purpose
+en-hu-dictionary-ai processes raw bilingual text sources, builds structured dictionary entries, and outputs cleaned parallel corpora for training neural translation models.
 
-## ⚙️ Tech Stack & Architecture
-- Python 3
+## Key Features
+- Bilingual sentence alignment and deduplication.
+- Dictionary term extraction logic.
+- Export to JSON and TSV dataset formats.
 
-## 🚀 Installation & Quickstart
+## Tech Stack & Dependencies
+- **Language**: Python 3.8+
+
+## Project Structure
+```text
+en-hu-dictionary-ai/
+├── build_dictionary.py
+├── utils/
+└── README.md
+```
+
+## Installation & Setup
+
+### Prerequisites
+- Python 3.8+
+
+### Steps
 ```bash
 git clone https://github.com/zsomborturcsanyi7-lang/en-hu-dictionary-ai.git
 cd en-hu-dictionary-ai
 python build_dictionary.py
 ```
 
-## 📊 Project Status
-⚠️ **Functional Data Processing Tool**.
+## Usage Examples
+```bash
+python build_dictionary.py --input raw_data/ --output dataset.json
+```
+
+## Status & License
+Status: Functional Data Tool.
+License: MIT
