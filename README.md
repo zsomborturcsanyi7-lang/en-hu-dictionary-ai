@@ -1,19 +1,19 @@
 # en-hu-dictionary-ai
 
-Angol-Magyar szótár és tanítóadat-generáló eszközkészlet AI modellekhez.
+Automated English-Hungarian dictionary and dataset generator for AI models.
 
-## 📌 A projekt célja
-Párhuzamos fordítási korpuszok és szótárbejegyzések automatizált előállítása és tisztítása.
+## 📌 Overview & Purpose
+Processes, cleans, and builds parallel English-Hungarian translation datasets and dictionary entries.
 
-## ⚙️ Technológiai stakk
+## ⚙️ Tech Stack & Architecture
 - Python 3
 
-## 🚀 Telepítés és Használat
+## 🚀 Installation & Quickstart
 ```bash
 git clone https://github.com/zsomborturcsanyi7-lang/en-hu-dictionary-ai.git
 cd en-hu-dictionary-ai
 python build_dictionary.py
 ```
 
-## 📊 Status
-⚠️ **Működő adatgeneráló eszköz**.
+## 📊 Project Status
+⚠️ **Functional Data Processing Tool**.
