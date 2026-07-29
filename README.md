@@ -1,27 +1,19 @@
 # en-hu-dictionary-ai
 
-**Status:** ⚠️ Prototype — translation pipeline works, needs Google Translate API key
+Angol-Magyar szótár és tanítóadat-generáló eszközkészlet AI modellekhez.
 
-Automated tool for building English-Hungarian dictionaries and generating AI training data. Bulk translation, synonym collection, example sentence generation.
+## 📌 A projekt célja
+Párhuzamos fordítási korpuszok és szótárbejegyzések automatizált előállítása és tisztítása.
 
-## ⚠️ THIS PROJECT IS UNFINISHED — FEEL FREE TO CONTINUE IT ⚠️
+## ⚙️ Technológiai stakk
+- Python 3
 
-This project was developed by Zsombi & Hermes Agent (Nous Research).
+## 🚀 Telepítés és Használat
+```bash
+git clone https://github.com/zsomborturcsanyi7-lang/en-hu-dictionary-ai.git
+cd en-hu-dictionary-ai
+python build_dictionary.py
+```
 
----
-
-## Features
-- English → Hungarian automatic word translation
-- Synonym collection in both languages
-- Example sentence generation for every word
-- Structured JSON output for AI training
-- Batch processing (thousands of words at once)
-
-## Files
-| File | Description |
-|------|-------------|
-| `config.py` | Configuration |
-| `quick_test.py` | Quick test |
-
-## Developer
-Zsombi & Hermes Agent (Nous Research)
+## 📊 Status
+⚠️ **Működő adatgeneráló eszköz**.
