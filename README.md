@@ -1,4 +1,4 @@
-# AI Dictionary Collector — Automated English-Hungarian Dictionary & Training Data Generator
+# en-hu-dictionary-ai
 
 **Status:** ⚠️ Prototype — translation pipeline works, needs Google Translate API key
 
